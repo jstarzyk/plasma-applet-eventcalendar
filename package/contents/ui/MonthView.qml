@@ -354,7 +354,22 @@ PinchArea {
 
         initialItem: DaysCalendar {
             id: mainDaysCalendar
-            title: calendarBackend.displayedDate.getFullYear() == new Date().getFullYear() ? root.selectedMonth :  root.selectedMonth + ", " + root.selectedYear
+            title: {
+                var dateFormat, text
+                if (calendarBackend.displayedDate.getFullYear() == today.getFullYear()) {
+                    if (showTodaysDate && calendarBackend.displayedDate.getMonth() == today.getMonth()) {
+                        dateFormat = i18nc("calendar title format for current month", "MMMM d, yyyy")
+                        text = Qt.formatDateTime(today, dateFormat)
+                        return text
+                    } else {
+                        dateFormat = i18nc("calendar title format for other months of current year", "MMMM")
+                    }
+                } else {
+                    dateFormat = i18nc("calendar title format for months not from current year", "MMMM, yyyy")
+                }
+                text = Qt.formatDateTime(calendarBackend.displayedDate, dateFormat)
+                return text
+            }
 
             columns: calendarBackend.days
             rows: calendarBackend.weeks

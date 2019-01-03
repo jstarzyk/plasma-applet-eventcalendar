@@ -108,7 +108,7 @@ Item {
             level: 1
             wrapMode: Text.NoWrap
             elide: Text.ElideRight
-            font.capitalization: Font.Capitalize
+            font.capitalization: Font.MixedCase
             //SEE QTBUG-58307
             //try to make all heights an even number, otherwise the layout engine gets confused
             Layout.preferredHeight: implicitHeight + implicitHeight%2
