@@ -123,7 +123,7 @@ CalendarManager {
 				logger.log('attempting to create an event without an access token set')
 			}
 		} else {
-			logger.log('cannot create an new event for the calendar', calendarId)
+			logger.log('cannot create a new event for the calendar', calendarId)
 		}
 	}
 
@@ -137,14 +137,14 @@ CalendarManager {
 		}
 	}
 
-	function setEventSummary(calendarId, eventId, summary) {
-		console.log('eventModel.setEventSummary', calendarId, eventId, summary)
+	function setEventProperty(calendarId, eventId, key, value) {
+		console.log('eventModel.setEventProperty', calendarId, eventId, key, value)
 		if (calendarId == "debug") {
-			debugCalendarManager.setEventSummary(calendarId, eventId, summary)
+			debugCalendarManager.setEventProperty(calendarId, eventId, key, value)
 		} else if (true) { // Google Calendar
-			googleCalendarManager.setGoogleCalendarEventSummary(plasmoid.configuration.access_token, calendarId, eventId, summary)
+			googleCalendarManager.setEventProperty(plasmoid.configuration.access_token, calendarId, eventId, key, value)
 		} else {
-			logger.log('cannot edit the event summary for the calendar', calendarId, eventId)
+			logger.log('cannot edit the event property for the calendar', calendarId, eventId)
 		}
 	}
 }

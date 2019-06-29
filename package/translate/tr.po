@@ -1,737 +1,737 @@
-# Translation of eventcalendar in LANGUAGE
+# Translation of eventcalendar in tr
 # Copyright (C) 2019
 # This file is distributed under the same license as the eventcalendar package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: eventcalendar \n"
+"Project-Id-Version: eventcalendar\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-eventcalendar\n"
 "POT-Creation-Date: 2019-06-17 20:34-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2019-06-02 22:28+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: ../contents/config/config.qml:9
 msgid "General"
-msgstr ""
+msgstr "Genel"
 
 #: ../contents/config/config.qml:19
 msgid "Timezones"
-msgstr ""
+msgstr "Zaman Dilimleri"
 
 #: ../contents/config/config.qml:24 ../contents/ui/UpcomingEvents.qml:124
 msgid "Calendar"
-msgstr ""
+msgstr "Takvim"
 
 #: ../contents/config/config.qml:29
 msgid "Agenda"
-msgstr ""
+msgstr "Ajanda"
 
 #: ../contents/config/config.qml:34
 msgid "Events"
-msgstr ""
+msgstr "Etkinlikler"
 
 #: ../contents/config/config.qml:39 ../contents/ui/config/ConfigEvents.qml:19
 msgid "ICalendar (.ics)"
-msgstr ""
+msgstr "ICalendar (.ics)"
 
 #: ../contents/config/config.qml:45 ../contents/ui/config/ConfigEvents.qml:25
 msgid "Google Calendar"
-msgstr ""
+msgstr "Google Takvim"
 
 #: ../contents/config/config.qml:50
 msgid "Weather"
-msgstr ""
+msgstr "Hava Durumu"
 
 #: ../contents/config/config.qml:55
 msgid "Advanced"
-msgstr ""
+msgstr "Gelişmiş"
 
 #: ../contents/ui/AgendaEventItem.qml:70
 msgid "Event Title"
-msgstr ""
+msgstr "Etkinlik Başlığı"
 
 #: ../contents/ui/AgendaEventItem.qml:145
 msgid "to"
-msgstr ""
+msgstr "dan"
 
 #: ../contents/ui/AgendaEventItem.qml:170 ../contents/ui/LocaleFuncs.js:42
 msgid "All Day"
-msgstr ""
+msgstr "Tüm Gün"
 
 #: ../contents/ui/AgendaEventItem.qml:175
 msgid "Save"
-msgstr ""
+msgstr "Kaydet"
 
 #: ../contents/ui/AgendaEventItem.qml:183
 msgid "Discard"
-msgstr ""
+msgstr "İptal"
 
 #: ../contents/ui/AgendaEventItem.qml:230
 msgid "Event Description"
-msgstr ""
+msgstr "Etkinlik Açıklaması"
 
 #: ../contents/ui/AgendaEventItem.qml:260 ../contents/ui/config/ConfigGoogleCalendar.qml:103
 msgid "Submit"
-msgstr ""
+msgstr "Gönder"
 
 #: ../contents/ui/AgendaEventItem.qml:285
 msgid "Hangout"
-msgstr ""
+msgstr "Takıl"
 
 #: ../contents/ui/AgendaEventItem.qml:312
 msgid "Edit title"
-msgstr ""
+msgstr "Başlığı düzenle"
 
 #: ../contents/ui/AgendaEventItem.qml:321
 msgid "Edit date/time"
-msgstr ""
+msgstr "Tarihi/zamanı düzenle"
 
 #: ../contents/ui/AgendaEventItem.qml:329
 msgid "Edit description"
-msgstr ""
+msgstr "Açıklamayı düzenle"
 
 #: ../contents/ui/AgendaEventItem.qml:338
 msgid "Delete Event"
-msgstr ""
+msgstr "Etkinliği Sil"
 
 #: ../contents/ui/AgendaEventItem.qml:341
 msgid "Confirm Deletion"
-msgstr ""
+msgstr "Silmeyi Onayla"
 
 #: ../contents/ui/AgendaEventItem.qml:353
 msgid "Edit in browser"
-msgstr ""
+msgstr "Tarayıcıda düzenle"
 
 #: ../contents/ui/AgendaListItem.qml:131
 msgctxt "agenda date format line 1"
 msgid "MMM d"
-msgstr ""
+msgstr "MMM d"
 
 #: ../contents/ui/AgendaListItem.qml:151
 msgctxt "agenda date format line 2"
 msgid "ddd"
-msgstr ""
+msgstr "ddd"
 
 #: ../contents/ui/AgendaView.qml:23 ../contents/ui/AgendaView.qml:36 ../contents/ui/UpcomingEvents.qml:129 ../contents/ui/UpcomingEvents.qml:146
 msgid "Event Calendar"
-msgstr ""
+msgstr "Etkinlik Takvimi"
 
 #: ../contents/ui/calendars/CalendarManager.qml:113
 msgctxt "event with no summary"
 msgid "(No title)"
-msgstr ""
+msgstr "(Başlık yok)"
 
 #: ../contents/ui/config/ConfigAgenda.qml:29
 msgid "Show agenda"
-msgstr ""
+msgstr "Ajandayı göster"
 
 #: ../contents/ui/config/ConfigAgenda.qml:35
 msgid "Agenda above the month (Single Column)"
-msgstr ""
+msgstr "Ajanda ayın üzerinde (Tek Sütun)"
 
 #: ../contents/ui/config/ConfigAgenda.qml:42
 msgid "Agenda to the left (Two Columns)"
-msgstr ""
+msgstr "Ajanda sola (İki Sütun)"
 
 #: ../contents/ui/config/ConfigAgenda.qml:53
 msgid "Font Size:"
-msgstr ""
+msgstr "Yazı Boyutu:"
 
 #: ../contents/ui/config/ConfigAgenda.qml:54 ../contents/ui/config/ConfigGeneral.qml:204
 msgid "px"
-msgstr ""
+msgstr "px"
 
 #: ../contents/ui/config/ConfigAgenda.qml:55
 msgid " (0px = <b>System Settings > Fonts > General</b>)"
-msgstr ""
+msgstr " (0px = <b>Sistem Ayarları > Yazı Tipi > Genel</b>)"
 
 #: ../contents/ui/config/ConfigAgenda.qml:64
 msgid "Weather Icon"
-msgstr ""
+msgstr "Hava Durumu İkonu"
 
 #: ../contents/ui/config/ConfigAgenda.qml:82
 msgid "Icon Outline"
-msgstr ""
+msgstr "İkon Dış Cephesi"
 
 #: ../contents/ui/config/ConfigAgenda.qml:88
 msgid "Weather Text"
-msgstr ""
+msgstr "Hava Durumu Yazısı"
 
 #: ../contents/ui/config/ConfigAgenda.qml:92
 msgid "Position:"
-msgstr ""
+msgstr "Pozisyon:"
 
 #: ../contents/ui/config/ConfigAgenda.qml:95
 msgid "Left"
-msgstr ""
+msgstr "Sol"
 
 #: ../contents/ui/config/ConfigAgenda.qml:101
 msgid "Right"
-msgstr ""
+msgstr "Sağ"
 
 #: ../contents/ui/config/ConfigAgenda.qml:109
 msgid "Click Weather:"
-msgstr ""
+msgstr "Hava Durumuna Tıklama:"
 
 #: ../contents/ui/config/ConfigAgenda.qml:112
 msgid "Open City Forecast In Browser"
-msgstr ""
+msgstr "Güncel Durumu Tarayıcıda Aç"
 
 #: ../contents/ui/config/ConfigAgenda.qml:121 ../contents/ui/config/ConfigCalendar.qml:25
 msgid "Click Date:"
-msgstr ""
+msgstr "Tarihe Tıklama:"
 
 #: ../contents/ui/config/ConfigAgenda.qml:124 ../contents/ui/config/ConfigCalendar.qml:40
 msgid "Open New Event In Browser"
-msgstr ""
+msgstr "Tarayıcıda Yeni Etkinlik Oluşturmayı Aç"
 
 #: ../contents/ui/config/ConfigAgenda.qml:129
 msgid "Open New Event Form"
-msgstr ""
+msgstr "Yeni Etkinlik Formunu Aç"
 
 #: ../contents/ui/config/ConfigAgenda.qml:139
 msgid "Event description"
-msgstr ""
+msgstr "Etkinlik açıklaması"
 
 #: ../contents/ui/config/ConfigAgenda.qml:143
 msgid "Google Hangouts link"
-msgstr ""
+msgstr "Google Hangouts linki"
 
 #: ../contents/ui/config/ConfigAgenda.qml:146
 msgid "Click Event:"
-msgstr ""
+msgstr "Etkinliğe Tıklama:"
 
 #: ../contents/ui/config/ConfigAgenda.qml:149
 msgid "Open Event In Browser"
-msgstr ""
+msgstr "Etkinliği Tarayıcıda Aç"
 
 #: ../contents/ui/config/ConfigAgenda.qml:159
 msgid "Show multi-day events:"
-msgstr ""
+msgstr "Çoklu-gün etkinliklerini göster:"
 
 #: ../contents/ui/config/ConfigAgenda.qml:164
 msgid "On all days"
-msgstr ""
+msgstr "Tüm günlerde"
 
 #: ../contents/ui/config/ConfigAgenda.qml:172
 msgid "Only on the first and current day"
-msgstr ""
+msgstr "Sadece ilk ve geçerli günde"
 
 #: ../contents/ui/config/ConfigAgenda.qml:185
 msgid "Remember selected calendar in New Event Form"
-msgstr ""
+msgstr "Yeni Etkinlik Formunda seçili takvimi hatırla"
 
 #: ../contents/ui/config/ConfigAgenda.qml:190
 msgid "Current Month"
-msgstr ""
+msgstr "Geçerli Ay"
 
 #: ../contents/ui/config/ConfigAgenda.qml:195
 msgid "Always show next 14 days"
-msgstr ""
+msgstr "Her zaman sonraki 14 günü göster"
 
 #: ../contents/ui/config/ConfigAgenda.qml:200
 msgid "Hide completed events"
-msgstr ""
+msgstr "Tamamlanmış etkinlikleri gizle"
 
 #: ../contents/ui/config/ConfigAgenda.qml:205
 msgid "Show all events of the current day (including completed events)"
-msgstr ""
+msgstr "Geçerli günün tüm etkinliklerini göster (tamamlanmışlar dahil)"
 
 #: ../contents/ui/config/ConfigAgenda.qml:211 ../contents/ui/config/ConfigWeather.qml:177
 msgid "Colors"
-msgstr ""
+msgstr "Renkler"
 
 #: ../contents/ui/config/ConfigAgenda.qml:215
 msgid "In Progress"
-msgstr ""
+msgstr "Devam Etmekte"
 
 #: ../contents/ui/config/ConfigCalendar.qml:20
 msgid "Show calendar"
-msgstr ""
+msgstr "Takvimi göster"
 
 #: ../contents/ui/config/ConfigCalendar.qml:28
 msgid "Scroll to event in Agenda"
-msgstr ""
+msgstr "Ajanda da etkinliğe kaydır"
 
 #: ../contents/ui/config/ConfigCalendar.qml:37
 msgid "DoubleClick Date:"
-msgstr ""
+msgstr "Tarihe Çift Tıklama:"
 
 #: ../contents/ui/config/ConfigCalendar.qml:48 ../contents/ui/config/ConfigWeather.qml:120
 msgid "Style"
-msgstr ""
+msgstr "Tarz"
 
 #: ../contents/ui/config/ConfigCalendar.qml:53
 msgid "Show Borders"
-msgstr ""
+msgstr "Kenarıkları Göster"
 
 #: ../contents/ui/config/ConfigCalendar.qml:57
 msgid "Show Week Numbers"
-msgstr ""
+msgstr "Hafta Numaralarını Göster"
 
 #: ../contents/ui/config/ConfigCalendar.qml:61
 msgid "First day of week:"
-msgstr ""
+msgstr "Haftanın ilk günü:"
 
 #: ../contents/ui/config/ConfigCalendar.qml:70 ../contents/ui/config/ConfigGeneral.qml:177
 msgid "Default"
-msgstr ""
+msgstr "Varsayılan"
 
 #: ../contents/ui/config/ConfigCalendar.qml:89
 msgid "Event Badge:"
-msgstr ""
+msgstr "Etkinlik Rozeti:"
 
 #: ../contents/ui/config/ConfigCalendar.qml:92 ../contents/ui/config/ConfigCalendar.qml:147 ../contents/ui/config/ConfigCalendar.qml:163
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: ../contents/ui/config/ConfigCalendar.qml:100
 msgid "Dots (3 Maximum)"
-msgstr ""
+msgstr "Nokta (max. 3 tane)"
 
 #: ../contents/ui/config/ConfigCalendar.qml:108
 msgid "Bottom Bar (Event Color)"
-msgstr ""
+msgstr "Alt Çizgi (Etkinlik Rengi)"
 
 #: ../contents/ui/config/ConfigCalendar.qml:116
 msgid "Bottom Bar (Highlight)"
-msgstr ""
+msgstr "Alt Çizgi (Vurgu)"
 
 #: ../contents/ui/config/ConfigCalendar.qml:124
 msgid "Count"
-msgstr ""
+msgstr "Sayı"
 
 #: ../contents/ui/config/ConfigCalendar.qml:137
 msgid "Radius:"
-msgstr ""
+msgstr "Yarıçap:"
 
 #: ../contents/ui/config/ConfigCalendar.qml:142
 msgid "Selected:"
-msgstr ""
+msgstr "Seçili:"
 
 #: ../contents/ui/config/ConfigCalendar.qml:151
 msgid "Solid Color (Highlight)"
-msgstr ""
+msgstr "Sabit Renk (Vurgu)"
 
 #: ../contents/ui/config/ConfigCalendar.qml:158
 msgid "Today:"
-msgstr ""
+msgstr "Bugün:"
 
 #: ../contents/ui/config/ConfigCalendar.qml:167
 msgid "Solid Color (Inverted)"
-msgstr ""
+msgstr "Sabit Renk (Terslenmiş)"
 
 #: ../contents/ui/config/ConfigCalendar.qml:173
 msgid "Big Number"
-msgstr ""
+msgstr "Büyük Sayı"
 
 #: ../contents/ui/config/ConfigEvents.qml:14
 msgid "Event Calendar Plugins"
-msgstr ""
+msgstr "Etkinlik Takvimi Eklentileri"
 
 #: ../contents/ui/config/ConfigEvents.qml:33
 msgid "Plasma Calendar Plugins"
-msgstr ""
+msgstr "Plasma Takvimi Eklentileri"
 
 #: ../contents/ui/config/ConfigEvents.qml:61 ../contents/ui/config/ConfigGeneral.qml:439
 msgid "Misc"
-msgstr ""
+msgstr "Ekstra"
 
 #: ../contents/ui/config/ConfigEvents.qml:67
 msgid "Refresh events every: "
-msgstr ""
+msgstr "Etkinlikleri her ... sürede yenile: "
 
 #: ../contents/ui/config/ConfigEvents.qml:68 ../contents/ui/config/ConfigWeather.qml:112
 msgctxt "Polling interval in minutes"
 msgid "min"
 msgid_plural "min"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "dk"
+msgstr[1] "dk"
 
 #: ../contents/ui/config/ConfigEvents.qml:75
 msgid "Notifications"
-msgstr ""
+msgstr "Bildirimler"
 
 #: ../contents/ui/config/ConfigEvents.qml:80
 msgid "Event Starting"
-msgstr ""
+msgstr "Etkinlik Başlarken"
 
 #: ../contents/ui/config/ConfigGeneral.qml:75 ../contents/ui/lib/ConfigNotification.qml:61
 msgid "Choose a sound effect"
-msgstr ""
+msgstr "Bir ses efekti seçin"
 
 #: ../contents/ui/config/ConfigGeneral.qml:96
 msgid "Widgets"
-msgstr ""
+msgstr "Eklentiler"
 
 #: ../contents/ui/config/ConfigGeneral.qml:102
 msgid "Show/Hide widgets above the calendar. Toggle Agenda/Calendar on their respective tabs."
-msgstr ""
+msgstr "Takvimin üzerindeki eklentileri göster/gizle. Ajanda/takvim sekmelerini aç/kapat."
 
 #: ../contents/ui/config/ConfigGeneral.qml:109
 msgid "Meteogram"
-msgstr ""
+msgstr "Meteogram"
 
 #: ../contents/ui/config/ConfigGeneral.qml:116 ../contents/ui/TimerView.qml:345
 msgid "Timer"
-msgstr ""
+msgstr "Zamanlayıcı"
 
 #: ../contents/ui/config/ConfigGeneral.qml:122
 msgid "SFX:"
-msgstr ""
+msgstr "SFX:"
 
 #: ../contents/ui/config/ConfigGeneral.qml:125
 msgid "Choose"
-msgstr ""
+msgstr "Seç"
 
 #: ../contents/ui/config/ConfigGeneral.qml:139
 msgid "Clock"
-msgstr ""
+msgstr "Saat"
 
 #: ../contents/ui/config/ConfigGeneral.qml:143
 msgid "Time Format"
-msgstr ""
+msgstr "Zaman Formatı"
 
 #: ../contents/ui/config/ConfigGeneral.qml:154
 msgid "The default font for the Breeze theme is Noto Sans which is hard to read with small text. Try using the Sans Serif font if you find the text too small when adding a second line."
-msgstr ""
+msgstr "Breeze teması için varsayılan tazı tipi okuması zor olan Noto Sans'dır. Eğer yazıyı çok küçük ve okuması zor buluyorsanız ikinci satırı eklerken Sans Serif yazı tipini kullanmayı deneyin."
 
 #: ../contents/ui/config/ConfigGeneral.qml:160
-msgid ""
-"You can also use <b>'&lt;b&gt;'ddd'&lt;/b&gt;'</b> or <b>'&lt;font color=\"#77aaadd\"&gt;'ddd'&lt;/font&gt;'</b> to style a section. Note the single quotes around the tags are used to bypass the "
-"time format."
-msgstr ""
+msgid "You can also use <b>'&lt;b&gt;'ddd'&lt;/b&gt;'</b> or <b>'&lt;font color=\"#77aaadd\"&gt;'ddd'&lt;/font&gt;'</b> to style a section. Note the single quotes around the tags are used to bypass the time format."
+msgstr "Bölümleri kişiselleştirmek için aynı zamanda <b>'&lt;b&gt;'ddd'&lt;/b&gt;'</b> or <b>'&lt;font color=\"#77aaadd\"&gt;'ddd'&lt;/font&gt;'</b> komutlarını da kullanabilirsiniz. Tırnak işaretlerinin zaman formatından ayrıştırılmak için koyulduğunu unutmayın."
 
 #: ../contents/ui/config/ConfigGeneral.qml:166
 msgid "Font:"
-msgstr ""
+msgstr "Yazı:"
 
 #: ../contents/ui/config/ConfigGeneral.qml:198
 msgid "Fixed Clock Height: "
-msgstr ""
+msgstr "Saat Uzunluğu: "
 
 #: ../contents/ui/config/ConfigGeneral.qml:210
 msgid " (0px = scale to fit)"
-msgstr ""
+msgstr " (0px = genişliğe göre ayarla)"
 
 #: ../contents/ui/config/ConfigGeneral.qml:220
 msgid "Line 1:"
-msgstr ""
+msgstr "1. Satır:"
 
 #: ../contents/ui/config/ConfigGeneral.qml:237 ../contents/ui/config/ConfigGeneral.qml:263 ../contents/ui/config/ConfigGeneral.qml:312
 msgid "Preset:"
-msgstr ""
+msgstr "Ön Tanımlı:"
 
 #: ../contents/ui/config/ConfigGeneral.qml:285 ../contents/ui/config/ConfigGeneral.qml:349
 msgid "Bold"
-msgstr ""
+msgstr "Kalın"
 
 #: ../contents/ui/config/ConfigGeneral.qml:296
 msgid "Line 2:"
-msgstr ""
+msgstr "2. Satır:"
 
 #: ../contents/ui/config/ConfigGeneral.qml:357
 msgid "Height:"
-msgstr ""
+msgstr "Uzunluk:"
 
 #: ../contents/ui/config/ConfigGeneral.qml:377
 msgid "Mouse Wheel"
-msgstr ""
+msgstr "Fare Tekerleği"
 
 #: ../contents/ui/config/ConfigGeneral.qml:387
 msgid "Run Commands"
-msgstr ""
+msgstr "Komutları Çalıştır"
 
 #: ../contents/ui/config/ConfigGeneral.qml:396
 msgid "Scroll Up:"
-msgstr ""
+msgstr "Yukarı Kaydırma:"
 
 #: ../contents/ui/config/ConfigGeneral.qml:407
 msgid "Scroll Down:"
-msgstr ""
+msgstr "Aşağı Kaydırma:"
 
 #: ../contents/ui/config/ConfigGeneral.qml:418
 msgid "Volume (No UI) (amixer)"
-msgstr ""
+msgstr "Ses (UI yok) (amixer)"
 
 #: ../contents/ui/config/ConfigGeneral.qml:427
 msgid "Volume (UI) (qdbus)"
-msgstr ""
+msgstr "Ses (UI) (qdbus)"
 
 #: ../contents/ui/config/ConfigGeneral.qml:445
 msgid "Desktop Widget: Show background"
-msgstr ""
+msgstr "Masaüstü Eklentisi: Arkaplanı göster"
 
 #: ../contents/ui/config/ConfigGeneral.qml:450
 msgid "Debugging"
-msgstr ""
+msgstr "Debug"
 
 #: ../contents/ui/config/ConfigGeneral.qml:456
 msgid ""
 "Enable Debugging\n"
 "This will log sensitive information to ~/.xsession-errors"
 msgstr ""
+"Debug'ı Etkinleştir\n"
+"Bu ayarı açmak hassas bilgileri ~/.xsession-erros'a kaydedecektir"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml:59
 msgid "Login"
-msgstr ""
+msgstr "Giriş Yap"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml:68
 msgid "Currently Synched."
-msgstr ""
+msgstr "Senkronize Edili."
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml:73
 msgid "Logout"
-msgstr ""
+msgstr "Çıkış Yap"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml:84
 msgid "To sync with Google Calendar"
-msgstr ""
+msgstr "Google Calendar ile senkronizeleşmek için"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml:90
 msgid "Visit <a href=\"%1\">%2</a> (opens in your web browser). After you login and give permission to acess your calendar, it will give you a code to paste below."
-msgstr ""
+msgstr "Tarayıcınızdan <a href=\"%1\">%2</a> adresini ziyaret edin. Giriş yaptıktan ve gerekli izinleri verdikten sonra size verilen kodu aşağıdaki alana yapıştırın."
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml:99
 msgid "Enter code here (Eg: %1)"
-msgstr ""
+msgstr "Kodu buraya girin (Örn: %1)"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml:110
 msgid "Invalid Google Authorization Code"
-msgstr ""
+msgstr "Geçersiz Google Doğrulama Kodu"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml:122 ../contents/ui/config/ConfigICal.qml:49
 msgid "Calendars"
-msgstr ""
+msgstr "Takvimler"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml:127
 msgid "Refresh"
-msgstr ""
+msgstr "Yenile"
 
 #: ../contents/ui/config/ConfigICal.qml:53
 msgid "Add Calendar"
-msgstr ""
+msgstr "Takvim Ekle"
 
 #: ../contents/ui/config/ConfigICal.qml:58
 msgid "New Calendar"
-msgstr ""
+msgstr "Yeni Takvim"
 
 #: ../contents/ui/config/ConfigICal.qml:94
 msgid "Calendar Label"
-msgstr ""
+msgstr "Takvim Etiketi"
 
 #: ../contents/ui/config/ConfigICal.qml:111
 msgid "Browse"
-msgstr ""
+msgstr "Tara"
 
 #: ../contents/ui/config/ConfigICal.qml:119
 msgid "iCalendar (*.ics)"
-msgstr ""
+msgstr "iCalendar (*.ics)"
 
 #: ../contents/ui/config/ConfigTimezones.qml:64
 msgid "Tooltip"
-msgstr ""
+msgstr "İpuçları"
 
 #: ../contents/ui/config/ConfigTimezones.qml:73
 msgid "Cannot deselect Local time from the tooltip"
-msgstr ""
+msgstr "Yerel zaman ipuçlarından seçim dışı edilemez"
 
 #: ../contents/ui/config/ConfigWeather.qml:23
 msgid "Data"
-msgstr ""
+msgstr "Veri"
 
 #: ../contents/ui/config/ConfigWeather.qml:41
 msgid "API App Id:"
-msgstr ""
+msgstr "API Uygulama ID'si:"
 
 #: ../contents/ui/config/ConfigWeather.qml:53 ../contents/ui/config/ConfigWeather.qml:77
 msgid "City Id:"
-msgstr ""
+msgstr "Şehir ID'si:"
 
 #: ../contents/ui/config/ConfigWeather.qml:58
 msgid "Eg: 5983720"
-msgstr ""
+msgstr "Örn: 5983720"
 
 #: ../contents/ui/config/ConfigWeather.qml:61 ../contents/ui/config/ConfigWeather.qml:85
 msgid "Find City"
-msgstr ""
+msgstr "Şehir Bul"
 
 #: ../contents/ui/config/ConfigWeather.qml:82
 msgid "Eg: on-14"
-msgstr ""
+msgstr "Örn: on-14"
 
 #: ../contents/ui/config/ConfigWeather.qml:99
 msgid "Settings"
-msgstr ""
+msgstr "Ayarlar"
 
 #: ../contents/ui/config/ConfigWeather.qml:105
 msgid "Update forecast every: "
-msgstr ""
+msgstr "Hava durumunu her ... sürede bir güncelle: "
 
 #: ../contents/ui/config/ConfigWeather.qml:126
 msgid "Show next "
-msgstr ""
+msgstr "Sonrakini göster "
 
 #: ../contents/ui/config/ConfigWeather.qml:133
 msgid " hours"
 msgid_plural " hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " saat"
+msgstr[1] " saat"
 
 #: ../contents/ui/config/ConfigWeather.qml:140
 msgid " in the meteogram."
-msgstr ""
+msgstr " meteogram'da."
 
 #: ../contents/ui/config/ConfigWeather.qml:147
 msgid "Units:"
-msgstr ""
+msgstr "Birim:"
 
 #: ../contents/ui/config/ConfigWeather.qml:150
 msgid "Celsius"
-msgstr ""
+msgstr "Celcius"
 
 #: ../contents/ui/config/ConfigWeather.qml:158
 msgid "Fahrenheit"
-msgstr ""
+msgstr "Fahrenheit"
 
 #: ../contents/ui/config/ConfigWeather.qml:166
 msgid "Kelvin"
-msgstr ""
+msgstr "Kelvin"
 
 #: ../contents/ui/config/ConfigWeather.qml:184
 msgid "Text"
-msgstr ""
+msgstr "Yazı"
 
 #: ../contents/ui/config/ConfigWeather.qml:189
 msgid "Grid"
-msgstr ""
+msgstr "Izgara"
 
 #: ../contents/ui/config/ConfigWeather.qml:194
 msgid "Rain"
-msgstr ""
+msgstr "Yağmur"
 
 #: ../contents/ui/config/ConfigWeather.qml:199
 msgid "Positive Temp"
-msgstr ""
+msgstr "Pozitif Sıcaklık"
 
 #: ../contents/ui/config/ConfigWeather.qml:204
 msgid "Negative Temp"
-msgstr ""
+msgstr "Negatif Sıcaklık"
 
 #: ../contents/ui/config/ConfigWeather.qml:209
 msgid "Icons"
-msgstr ""
+msgstr "İkonlar"
 
 #: ../contents/ui/config/OpenWeatherMapCityDialog.qml:13 ../contents/ui/config/WeatherCanadaCityDialog.qml:13
 msgid "Select city"
-msgstr ""
+msgstr "Şehir seç"
 
 #: ../contents/ui/config/OpenWeatherMapCityDialog.qml:64 ../contents/ui/config/WeatherCanadaCityDialog.qml:68
 msgid "Fetched from <a href=\"%1\">%1</a>"
-msgstr ""
+msgstr "Bilgiler <a href=\"%1\">%1</a> sitesinden alınmaktadır."
 
 #: ../contents/ui/config/OpenWeatherMapCityDialog.qml:70 ../contents/ui/config/WeatherCanadaCityDialog.qml:91
 msgid "Search"
-msgstr ""
+msgstr "Ara"
 
 #: ../contents/ui/config/OpenWeatherMapCityDialog.qml:83 ../contents/ui/config/WeatherCanadaCityDialog.qml:104
 msgid "Name"
-msgstr ""
+msgstr "İsim"
 
 #: ../contents/ui/config/OpenWeatherMapCityDialog.qml:88 ../contents/ui/config/WeatherCanadaCityDialog.qml:109
 msgid "Id"
-msgstr ""
+msgstr "ID"
 
 #: ../contents/ui/config/OpenWeatherMapCityDialog.qml:93 ../contents/ui/config/WeatherCanadaCityDialog.qml:114
 msgid "City Webpage"
-msgstr ""
+msgstr "Şehir Sayfası"
 
 #: ../contents/ui/config/OpenWeatherMapCityDialog.qml:95 ../contents/ui/config/WeatherCanadaCityDialog.qml:116
 msgid "Open Link"
-msgstr ""
+msgstr "Linki Aç"
 
 #: ../contents/ui/lib/AppletVersion.qml:41
 msgid "<b>Version:</b> %1"
-msgstr ""
+msgstr "<b>Sürüm:</b> %1"
 
 #: ../contents/ui/LocaleFuncs.js:8
 msgctxt "event time on the hour (24 hour clock)"
 msgid "h"
-msgstr ""
+msgstr "h"
 
 #: ../contents/ui/LocaleFuncs.js:10
 msgctxt "event time (24 hour clock)"
 msgid "h:mm"
-msgstr ""
+msgstr "h:mm"
 
 #: ../contents/ui/LocaleFuncs.js:14
 msgctxt "event time on the hour (12 hour clock)"
 msgid "h AP"
-msgstr ""
+msgstr "h AP"
 
 #: ../contents/ui/LocaleFuncs.js:16
 msgctxt "event time (12 hour clock)"
 msgid "h:mm AP"
-msgstr ""
+msgstr "h:mm AP"
 
 #: ../contents/ui/LocaleFuncs.js:23 ../contents/ui/LocaleFuncs.js:34
 msgctxt "short month+date format"
 msgid "MMM d"
-msgstr ""
+msgstr "MMM d"
 
 #: ../contents/ui/LocaleFuncs.js:26
 msgctxt "date (%1) with time (%2)"
 msgid "%1, %2"
-msgstr ""
+msgstr "%1, %2"
 
 #: ../contents/ui/LocaleFuncs.js:46 ../contents/ui/LocaleFuncs.js:67
 msgctxt "from date/time %1 until date/time %2"
 msgid "%1 - %2"
-msgstr ""
+msgstr "%1 - %2"
 
 #: ../contents/ui/main.qml:220
 msgid "Set Language..."
-msgstr ""
+msgstr "Dili Ayarla..."
 
 #: ../contents/ui/main.qml:223
 msgid "Set Locale..."
-msgstr ""
+msgstr "Bölgeyi Ayarla..."
 
 #: ../contents/ui/MeteogramView.qml:326
 #, c-format
 msgid "%1mm"
-msgstr ""
+msgstr "%1mm"
 
 #: ../contents/ui/MonthView.qml:363
 msgctxt "calendar title format for current month"
 msgid "MMMM d, yyyy"
-msgstr ""
+msgstr "MMMM d, yyyy"
 
 #: ../contents/ui/MonthView.qml:367
 msgctxt "calendar title format for other months of current year"
 msgid "MMMM"
-msgstr ""
+msgstr "MMMM"
 
 #: ../contents/ui/MonthView.qml:370
 msgctxt "calendar title format for months not from current year"
 msgid "MMMM, yyyy"
-msgstr ""
+msgstr "MMMM, yyyy"
 
 #: ../contents/ui/NewEventForm.qml:24
 msgid "[No Calendars]"
-msgstr ""
+msgstr "[Takvim Yok]"
 
 #: ../contents/ui/NewEventForm.qml:31
 msgid "Eg: 9am-5pm Work"
-msgstr ""
+msgstr "Örn: 9-5 arası iş"
 
 #: ../contents/ui/PopupView.qml:304
 msgid ""
@@ -739,91 +739,94 @@ msgid ""
 "Go to Weather in the config and set your city,\n"
 "and/or disable the meteogram to hide this area."
 msgstr ""
+"Hava durumu henüz ayarlanmadı.\n"
+"Ayarlardan Hava Durumu'na girin ve şehrinizi seçin,\n"
+"sonrasında ise burada gözükmesi için meteogramı açın/kapatın."
 
 #: ../contents/ui/TimerInputView.qml:75
 msgid "Cancel"
-msgstr ""
+msgstr "İptal"
 
 #: ../contents/ui/TimerInputView.qml:80
 msgid "Start"
-msgstr ""
+msgstr "Başla"
 
 #: ../contents/ui/TimerView.qml:22
 msgid "30s"
-msgstr ""
+msgstr "30sn"
 
 #: ../contents/ui/TimerView.qml:26
 msgid "1m"
-msgstr ""
+msgstr "1dk"
 
 #: ../contents/ui/TimerView.qml:30
 msgid "5m"
-msgstr ""
+msgstr "5dk"
 
 #: ../contents/ui/TimerView.qml:34
 msgid "10m"
-msgstr ""
+msgstr "10dk"
 
 #: ../contents/ui/TimerView.qml:38
 msgid "15m"
-msgstr ""
+msgstr "15dk"
 
 #: ../contents/ui/TimerView.qml:42
 msgid "20m"
-msgstr ""
+msgstr "20dk"
 
 #: ../contents/ui/TimerView.qml:46
 msgid "30m"
-msgstr ""
+msgstr "30dk"
 
 #: ../contents/ui/TimerView.qml:50
 msgid "45m"
-msgstr ""
+msgstr "45dk"
 
 #: ../contents/ui/TimerView.qml:54
 msgid "1h"
-msgstr ""
+msgstr "1s"
 
 #: ../contents/ui/TimerView.qml:102
 msgid "Pause Timer"
-msgstr ""
+msgstr "Zamanlayıcıyı Durdur"
 
 #: ../contents/ui/TimerView.qml:104
 msgid "Start Timer"
-msgstr ""
+msgstr "Zamanlayıcıyı Başlat"
 
 #: ../contents/ui/TimerView.qml:108
 msgid "Scroll to add to duration"
-msgstr ""
+msgstr "Süre eklemek için kaydırın"
 
 #: ../contents/ui/TimerView.qml:163 ../contents/ui/TimerView.qml:172 ../contents/ui/TimerView.qml:373
 msgid "Repeat"
-msgstr ""
+msgstr "Tekrarla"
 
 #: ../contents/ui/TimerView.qml:181 ../contents/ui/TimerView.qml:190 ../contents/ui/TimerView.qml:382
 msgid "Sound"
-msgstr ""
+msgstr "Ses"
 
 #: ../contents/ui/TimerView.qml:347
 msgid "Timer finished"
-msgstr ""
+msgstr "Zamanlayıcı tamamlandı"
 
 #: ../contents/ui/TimerView.qml:348
 msgid "%1 has passed"
-msgstr ""
+msgstr "%1 geçti"
 
 #: ../contents/ui/TimerView.qml:394
 msgid "Set Timer"
-msgstr ""
+msgstr "Zamanlayıcıyı Ayarla"
 
 #: ../contents/ui/UpcomingEvents.qml:114
 msgid "Events Starting"
-msgstr ""
+msgstr "Etkinlikler Başlıyor"
 
 #: ../contents/ui/UpcomingEvents.qml:117
 msgid "Events In Progress"
-msgstr ""
+msgstr "Devam Eden Etkinlikler"
 
 #: ../contents/ui/UpcomingEvents.qml:120
 msgid "Upcoming Events"
-msgstr ""
+msgstr "Gelecek Etkinlikler"

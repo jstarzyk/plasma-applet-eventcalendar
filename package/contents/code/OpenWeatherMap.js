@@ -1,7 +1,7 @@
 .import "../ui/lib/Requests.js" as Requests
 
 function openOpenWeatherMapCityUrl(cityId) {
-	var url = 'http://openweathermap.org/city/'
+	var url = 'https://openweathermap.org/city/'
 	url += cityId
 	Qt.openUrlExternally(url)
 }
@@ -9,8 +9,10 @@ function openOpenWeatherMapCityUrl(cityId) {
 function fetchHourlyWeatherForecast(args, callback) {
 	if (!args.app_id) return callback('OpenWeatherMap AppId not set')
 	if (!args.city_id) return callback('OpenWeatherMap CityId not set')
-	
-	var url = 'http://api.openweathermap.org/data/2.5/'
+
+	// return testRateLimitError(callback)
+
+	var url = 'https://api.openweathermap.org/data/2.5/'
 	url += 'forecast?id=' + args.city_id
 	url += '&units=' + (args.units || 'metric')
 	url += '&appid=' + args.app_id
@@ -18,18 +20,19 @@ function fetchHourlyWeatherForecast(args, callback) {
 }
 
 function fetchDailyWeatherForecast(args, callback) {
-	console.log('fetchWeatherForecast')
 	if (!args.app_id) return callback('OpenWeatherMap AppId not set')
 	if (!args.city_id) return callback('OpenWeatherMap CityId not set')
-	
-	var url = 'http://api.openweathermap.org/data/2.5/'
+
+	// return testRateLimitError(callback)
+
+	var url = 'https://api.openweathermap.org/data/2.5/'
 	url += 'forecast/daily?id=' + args.city_id
 	url += '&units=' + (args.units || 'metric')
 	url += '&appid=' + args.app_id
 	Requests.getJSON(url, callback)
 }
 
-// http://openweathermap.org/weather-conditions
+// https://openweathermap.org/weather-conditions
 var weatherIconMap = {
 	'01d': 'weather-clear',
 	'02d': 'weather-few-clouds',
@@ -74,23 +77,34 @@ function parseHourlyData(weatherData) {
 	for (var j = 0; j < weatherData.list.length; j++) {
 		var forecastItem = weatherData.list[j]
 		
+		forecastItem.temp = forecastItem.main.temp
 		forecastItem.iconName = weatherIconMap[forecastItem.weather[0].icon]
-		forecastItem.text = forecastItem.weather[0].main
+		// forecastItem.text = forecastItem.weather[0].main
 		forecastItem.description = forecastItem.weather[0].description
+
+		var rain = forecastItem.rain && forecastItem.rain['3h'] || 0
+		var snow = forecastItem.snow && forecastItem.snow['3h'] || 0
+		var mm = rain + snow
+		forecastItem.precipitation = mm
 	}
 
 	return weatherData
 }
 
+function handleError(funcName, callback, err, data, xhr) {
+	logger.logJSON(funcName + '.err', err, xhr && xhr.status, data)
+	return callback(err, data, xhr)
+}
+
 function updateDailyWeather(callback) {
-	// console.log('fetchDailyWeatherForecast', lastForecastAt, Date.now())
+	logger.debug('fetchDailyWeatherForecast', lastForecastAt, Date.now())
 	fetchDailyWeatherForecast({
 		app_id: plasmoid.configuration.weather_app_id,
 		city_id: plasmoid.configuration.weather_city_id,
 		units: plasmoid.configuration.weather_units,
 	}, function(err, data, xhr) {
-		if (err) return console.log('fetchDailyWeatherForecast.err', err, xhr && xhr.status, data)
-		logger.log('fetchDailyWeatherForecast.response')
+		if (err) return handleError('fetchDailyWeatherForecast', callback, err, data, xhr)
+		logger.debug('fetchDailyWeatherForecast.response')
 		// logger.debugJSON('fetchDailyWeatherForecast.response', data)
 
 		data = parseDailyData(data)
@@ -100,18 +114,29 @@ function updateDailyWeather(callback) {
 }
 
 function updateHourlyWeather(callback) {
-	// console.log('fetchHourlyWeatherForecast', lastForecastAt, Date.now())
+	logger.debug('fetchHourlyWeatherForecast', lastForecastAt, Date.now())
 	fetchHourlyWeatherForecast({
 		app_id: plasmoid.configuration.weather_app_id,
 		city_id: plasmoid.configuration.weather_city_id,
 		units: plasmoid.configuration.weather_units,
 	}, function(err, data, xhr) {
-		if (err) return console.log('fetchHourlyWeatherForecast.err', err, xhr && xhr.status, data)
-		logger.log('fetchHourlyWeatherForecast.response')
+		if (err) return handleError('updateHourlyWeather', callback, err, data, xhr)
+		logger.debug('fetchHourlyWeatherForecast.response')
 		// logger.debugJSON('fetchHourlyWeatherForecast.response', data)
 
 		data = parseHourlyData(data)
 
-		callback(err, data)
+		callback(err, data, xhr)
 	})
+}
+
+//--- Tests
+function testRateLimitError(callback) {
+	var err = 'HTTP Error 429: '
+	var data = {
+		"cod":429,
+		"message": "Your account is temporary blocked due to exceeding of requests limitation of your subscription type. Please choose the proper subscription http://openweathermap.org/price"
+	}
+	var xhr = { status: 429 }
+	return callback(err, data, xhr)
 }

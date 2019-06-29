@@ -145,7 +145,7 @@ ConfigPage {
 		}
 
 		LinkText {
-			text: '<a href="http://doc.qt.io/qt-5/qml-qtqml-qt.html#formatDateTime-method">Time Format Documentation</a>'
+			text: '<a href="https://doc.qt.io/qt-5/qml-qtqml-qt.html#formatDateTime-method">Time Format Documentation</a>'
 		}
 
 		Label {
@@ -393,7 +393,7 @@ ConfigPage {
 				Layout.fillWidth: true
 				Text { width: indentWidth } // indent
 				Label {
-					text: i18n("Scoll Up:")
+					text: i18n("Scroll Up:")
 				}
 				TextField {
 					Layout.fillWidth: true

@@ -60,8 +60,8 @@ Dialog {
 
 	ColumnLayout {
 		anchors.fill: parent
-		LinkText { 
-			text: i18n("Fetched from <a href=\"https://openweathermap.org/find\">https://openweathermap.org/find</a>")
+		LinkText {
+			text: i18n("Fetched from <a href=\"%1\">%1</a>", "https://openweathermap.org/find")
 		}
 		TextField {
 			id: cityNameInput
@@ -92,7 +92,7 @@ Dialog {
 				role: 'id'
 				title: i18n("City Webpage")
 				delegate: LinkText {
-					text: '<a href="http://openweathermap.org/city/' + styleData.value + '">' + i18n("Open Link") + '</a>'
+					text: '<a href="https://openweathermap.org/city/' + styleData.value + '">' + i18n("Open Link") + '</a>'
 					linkColor: styleData.selected ? theme.textColor : theme.highlightColor
 				}
 			}
@@ -152,7 +152,7 @@ Dialog {
 	function fetchCityList(args, callback) {
 		if (!args.app_id) return callback('OpenWeatherMap AppId not set')
 		
-		var url = 'http://api.openweathermap.org/data/2.5/'
+		var url = 'https://api.openweathermap.org/data/2.5/'
 		url += 'find?q=' + encodeURIComponent(args.q)
 		url += '&type=like'
 		url += '&sort=population'
