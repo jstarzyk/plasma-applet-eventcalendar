@@ -1,5 +1,6 @@
 import QtQuick 2.0
 
+import "../lib/Async.js" as Async
 import "../lib/Requests.js" as Requests
 import "../../code/ColorIdMap.js" as ColorIdMap
 
@@ -9,32 +10,66 @@ CalendarManager {
 	id: googleCalendarManager
 
 	calendarManagerId: "googlecal"
-	property var calendarIdList: plasmoid.configuration.calendar_id_list ? plasmoid.configuration.calendar_id_list.split(',') : ['primary']
+	readonly property var calendarIdList: plasmoid.configuration.calendar_id_list ? plasmoid.configuration.calendar_id_list.split(',') : ['primary']
+	readonly property string accessToken: plasmoid.configuration.access_token
 
 	onFetchAllCalendars: {
 		fetchGoogleAccountData()
 	}
 
 	function fetchGoogleAccountData() {
-		if (plasmoid.configuration.access_token) {
-			fetchGoogleAccountEvents(plasmoid.configuration.access_token, calendarIdList)
-			// fetchGoogleTasks(plasmoid.configuration.access_token, '@default')
+		if (accessToken) {
+			fetchGoogleAccountEvents(calendarIdList)
+			// fetchGoogleTasks('@default')
 		}
 	}
 
 	//-------------------------
 	// Events
-	function fetchGoogleAccountEvents(accessToken, calendarIdList) {
-		if (accessToken) {
-			for (var i = 0; i < calendarIdList.length; i++) {
-				fetchGoogleCalendarEvents(accessToken, calendarIdList[i])
-			}
+	function fetchGoogleAccountEvents(calendarIdList) {
+		console.log('fetchGoogleAccountEvents', calendarIdList)
+		console.log('\taccessToken', accessToken)
+		if (!accessToken) return
+
+		console.log('plasmoid.configuration.access_token_expires_at', plasmoid.configuration.access_token_expires_at)
+		console.log('Date.now()', Date.now())
+
+		// for (var i = 0; i < calendarIdList.length; i++) {
+		// 	fetchGoogleCalendarEvents(calendarIdList[i])
+		// }
+
+		var tasks = []
+		for (var i = 0; i < calendarIdList.length; i++) {
+			var calendarId = calendarIdList[i]
+			var task = fetchGoogleCalendarEvents.bind(this, calendarId)
+			tasks.push(task)
+			break
 		}
+
+		googleCalendarManager.asyncRequests += 1
+		Async.parallel(tasks, function(err, results){
+			if (err) {
+				logger.debug('fetchGoogleAccountEvents.err', err)
+				googleCalendarManager.asyncRequestsDone += 1
+				return handleError(err.err, err.data, err.xhr)
+			}
+
+			for (var i = 0; i < results.length; i++) {
+				var calendarId = results[i].calendarId
+				var calendarData = results[i].data
+				setCalendarData(calendarId, calendarData)
+			}
+			googleCalendarManager.asyncRequestsDone += 1
+		})
 	}
 
-	function fetchGoogleCalendarEvents(accessToken, calendarId) {
+	function fetchGoogleCalendarEvents(calendarId, callback) {
 		logger.debug('fetchGoogleCalendarEvents', calendarId)
-		googleCalendarManager.asyncRequests += 1
+		// return callback({
+		// 	err: 'test',
+		// 	data: null,
+		// 	xhr: null,
+		// })
 		fetchGCalEvents({
 			calendarId: calendarId,
 			start: googleCalendarManager.dateMin.toISOString(),
@@ -43,15 +78,17 @@ CalendarManager {
 		}, function(err, data, xhr) {
 			if (err) {
 				logger.logJSON('onErrorFetchingEvents: ', err)
-				if (xhr.status === 404) {
-					return
-				}
-				googleCalendarManager.asyncRequestsDone += 1
-				return onErrorFetchingEvents(err)
+				return callback({
+					err: err,
+					data: data,
+					xhr: xhr,
+				})
 			}
 
-			setCalendarData(calendarId, data)
-			googleCalendarManager.asyncRequestsDone += 1
+			return callback(null, {
+				calendarId: calendarId,
+				data: data,
+			})
 		})
 	}
 
@@ -121,6 +158,37 @@ CalendarManager {
 	function onErrorFetchingEvents(err) {
 		logger.logJSON('onErrorFetchingEvents: ', err)
 		deferredUpdateAccessTokenThenUpdateEvents.restart()
+	}
+
+	property int errorCount: 0
+	function getErrorTimeout(n) {
+		// Exponential Backoff
+		// 43200 seconds is 12 hours, which is a reasonable polling limit when the API is down.
+		// After 6 errors, we wait an entire minute.
+		// After 11 errors, we wait an entire hour.
+		// After 15 errors, we will have waited 9 hours.
+		// 16 errors and above uses the upper limit of 12 hour intervals.
+		return 1000 * Math.min(43200, Math.pow(2, n))
+	}
+	// https://stackoverflow.com/questions/28507619/how-to-create-delay-function-in-qml
+	function delay(delayTime, callback) {
+		var timer = Qt.createQmlObject("import QtQuick 2.0; Timer {}", googleCalendarManager)
+		timer.interval = delayTime
+		timer.repeat = false
+		timer.triggered.connect(callback)
+		timer.triggered.connect(function release(){
+			timer.triggered.disconnect(callback)
+			timer.triggered.disconnect(release)
+			timer.destroy()
+		})
+		timer.start()
+	}
+	function waitForErrorTimeout(callback) {
+		errorCount += 1
+		var timeout = getErrorTimeout(errorCount)
+		delay(timeout, function(){
+			callback()
+		})
 	}
 
 	Timer {
@@ -279,6 +347,14 @@ CalendarManager {
 			}
 			callback(err, data, xhr)
 		})
+	}
+
+	function handleError(err, data, xhr) {
+		// https://developers.google.com/calendar/v3/errors
+		if (err.error && err.error.errors && err.error.errors.length >= 1) {
+			var err0 = err.error.errors[0]
+			
+		}
 	}
 
 
