@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eventcalendar\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-eventcalendar\n"
-"POT-Creation-Date: 2019-07-22 18:35-0400\n"
+"POT-Creation-Date: 2019-10-24 13:27-0400\n"
 "PO-Revision-Date: 2019-04-17 16:43+0800\n"
 "Last-Translator: Core小睿 <i@coreja.com>\n"
 "Language-Team: \n"
@@ -54,59 +54,44 @@ msgstr "天气"
 msgid "Advanced"
 msgstr "高级"
 
-#: ../contents/ui/AgendaEventItem.qml:70
+#: ../contents/ui/AgendaEventItem.qml:76 ../contents/ui/EditEventForm.qml:73
 msgid "Event Title"
 msgstr "事件标题"
 
-#: ../contents/ui/AgendaEventItem.qml:145
-msgid "to"
-msgstr ""
-
-#: ../contents/ui/AgendaEventItem.qml:170 ../contents/ui/LocaleFuncs.js:42
-msgid "All Day"
-msgstr "全天"
-
-#: ../contents/ui/AgendaEventItem.qml:175
-msgid "Save"
-msgstr "保存"
-
-#: ../contents/ui/AgendaEventItem.qml:183
-msgid "Discard"
-msgstr "忽略"
-
-#: ../contents/ui/AgendaEventItem.qml:230
+#: ../contents/ui/AgendaEventItem.qml:195
 msgid "Event Description"
 msgstr "事件描述"
 
-#: ../contents/ui/AgendaEventItem.qml:260 ../contents/ui/config/ConfigGoogleCalendar.qml:103
+#: ../contents/ui/AgendaEventItem.qml:225
+#: ../contents/ui/config/ConfigGoogleCalendar.qml:142
 msgid "Submit"
 msgstr "提交"
 
-#: ../contents/ui/AgendaEventItem.qml:285
+#: ../contents/ui/AgendaEventItem.qml:267
 msgid "Hangout"
 msgstr ""
 
-#: ../contents/ui/AgendaEventItem.qml:312
+#: ../contents/ui/AgendaEventItem.qml:294
 msgid "Edit title"
 msgstr "编辑标题"
 
-#: ../contents/ui/AgendaEventItem.qml:321
-msgid "Edit date/time"
-msgstr "编辑日期/时间"
-
-#: ../contents/ui/AgendaEventItem.qml:329
+#: ../contents/ui/AgendaEventItem.qml:303
 msgid "Edit description"
 msgstr "编辑详情"
 
-#: ../contents/ui/AgendaEventItem.qml:338
+#: ../contents/ui/AgendaEventItem.qml:312
+msgid "Edit"
+msgstr ""
+
+#: ../contents/ui/AgendaEventItem.qml:321
 msgid "Delete Event"
 msgstr "删除事件"
 
-#: ../contents/ui/AgendaEventItem.qml:341
+#: ../contents/ui/AgendaEventItem.qml:324
 msgid "Confirm Deletion"
 msgstr "确认删除"
 
-#: ../contents/ui/AgendaEventItem.qml:353
+#: ../contents/ui/AgendaEventItem.qml:336
 msgid "Edit in browser"
 msgstr "在浏览器中编辑"
 
@@ -120,7 +105,8 @@ msgctxt "agenda date format line 2"
 msgid "ddd"
 msgstr ""
 
-#: ../contents/ui/AgendaView.qml:23 ../contents/ui/AgendaView.qml:36 ../contents/ui/UpcomingEvents.qml:129 ../contents/ui/UpcomingEvents.qml:146
+#: ../contents/ui/AgendaView.qml:23 ../contents/ui/AgendaView.qml:36
+#: ../contents/ui/UpcomingEvents.qml:129 ../contents/ui/UpcomingEvents.qml:146
 msgid "Event Calendar"
 msgstr ""
 
@@ -145,7 +131,8 @@ msgstr "日程显示在日历左侧（双列显示）"
 msgid "Font Size:"
 msgstr "字体大小："
 
-#: ../contents/ui/config/ConfigAgenda.qml:54 ../contents/ui/config/ConfigGeneral.qml:204
+#: ../contents/ui/config/ConfigAgenda.qml:54
+#: ../contents/ui/config/ConfigGeneral.qml:204
 msgid "px"
 msgstr "像素"
 
@@ -185,11 +172,13 @@ msgstr "点击天气："
 msgid "Open City Forecast In Browser"
 msgstr "在浏览器中打开城市天气预报"
 
-#: ../contents/ui/config/ConfigAgenda.qml:121 ../contents/ui/config/ConfigCalendar.qml:25
+#: ../contents/ui/config/ConfigAgenda.qml:121
+#: ../contents/ui/config/ConfigCalendar.qml:25
 msgid "Click Date:"
 msgstr "点击日期："
 
-#: ../contents/ui/config/ConfigAgenda.qml:124 ../contents/ui/config/ConfigCalendar.qml:40
+#: ../contents/ui/config/ConfigAgenda.qml:124
+#: ../contents/ui/config/ConfigCalendar.qml:40
 msgid "Open New Event In Browser"
 msgstr "在浏览器中新建事件"
 
@@ -245,7 +234,8 @@ msgstr "隐藏已完成事件"
 msgid "Show all events of the current day (including completed events)"
 msgstr "在当前天展示所有的事件（包括已完成事件）"
 
-#: ../contents/ui/config/ConfigAgenda.qml:211 ../contents/ui/config/ConfigWeather.qml:177
+#: ../contents/ui/config/ConfigAgenda.qml:211
+#: ../contents/ui/config/ConfigWeather.qml:177
 msgid "Colors"
 msgstr "颜色"
 
@@ -265,7 +255,8 @@ msgstr "在日程里跳转到事件"
 msgid "DoubleClick Date:"
 msgstr "双击日期："
 
-#: ../contents/ui/config/ConfigCalendar.qml:48 ../contents/ui/config/ConfigWeather.qml:120
+#: ../contents/ui/config/ConfigCalendar.qml:48
+#: ../contents/ui/config/ConfigWeather.qml:120
 msgid "Style"
 msgstr "样式"
 
@@ -281,7 +272,8 @@ msgstr "显示周数"
 msgid "First day of week:"
 msgstr "一周的第一天："
 
-#: ../contents/ui/config/ConfigCalendar.qml:70 ../contents/ui/config/ConfigGeneral.qml:177
+#: ../contents/ui/config/ConfigCalendar.qml:70
+#: ../contents/ui/config/ConfigGeneral.qml:177
 msgid "Default"
 msgstr "默认"
 
@@ -289,7 +281,9 @@ msgstr "默认"
 msgid "Event Badge:"
 msgstr "事件标记："
 
-#: ../contents/ui/config/ConfigCalendar.qml:92 ../contents/ui/config/ConfigCalendar.qml:147 ../contents/ui/config/ConfigCalendar.qml:163
+#: ../contents/ui/config/ConfigCalendar.qml:92
+#: ../contents/ui/config/ConfigCalendar.qml:147
+#: ../contents/ui/config/ConfigCalendar.qml:163
 msgid "Theme"
 msgstr "跟随主题"
 
@@ -341,7 +335,8 @@ msgstr "Event Calendar 插件"
 msgid "Plasma Calendar Plugins"
 msgstr "Plasma 日历插件"
 
-#: ../contents/ui/config/ConfigEvents.qml:61 ../contents/ui/config/ConfigGeneral.qml:439
+#: ../contents/ui/config/ConfigEvents.qml:61
+#: ../contents/ui/config/ConfigGeneral.qml:439
 msgid "Misc"
 msgstr "杂项"
 
@@ -349,7 +344,8 @@ msgstr "杂项"
 msgid "Refresh events every: "
 msgstr "刷新事件频率： "
 
-#: ../contents/ui/config/ConfigEvents.qml:68 ../contents/ui/config/ConfigWeather.qml:112
+#: ../contents/ui/config/ConfigEvents.qml:68
+#: ../contents/ui/config/ConfigWeather.qml:112
 msgctxt "Polling interval in minutes"
 msgid "min"
 msgid_plural "min"
@@ -363,7 +359,8 @@ msgstr "通知"
 msgid "Event Starting"
 msgstr "事件开始"
 
-#: ../contents/ui/config/ConfigGeneral.qml:75 ../contents/ui/lib/ConfigNotification.qml:61
+#: ../contents/ui/config/ConfigGeneral.qml:75
+#: ../contents/ui/lib/ConfigNotification.qml:62
 msgid "Choose a sound effect"
 msgstr "选择一个音效"
 
@@ -372,14 +369,16 @@ msgid "Widgets"
 msgstr "小部件"
 
 #: ../contents/ui/config/ConfigGeneral.qml:102
-msgid "Show/Hide widgets above the calendar. Toggle Agenda/Calendar on their respective tabs."
+msgid ""
+"Show/Hide widgets above the calendar. Toggle Agenda/Calendar on their "
+"respective tabs."
 msgstr "请在分别在日程/日历的页面上显示/隐藏小部件。"
 
 #: ../contents/ui/config/ConfigGeneral.qml:109
 msgid "Meteogram"
 msgstr "天气预报图"
 
-#: ../contents/ui/config/ConfigGeneral.qml:116 ../contents/ui/TimerView.qml:345
+#: ../contents/ui/config/ConfigGeneral.qml:116 ../contents/ui/TimerView.qml:329
 msgid "Timer"
 msgstr "倒计时器"
 
@@ -400,12 +399,21 @@ msgid "Time Format"
 msgstr "时间格式"
 
 #: ../contents/ui/config/ConfigGeneral.qml:154
-msgid "The default font for the Breeze theme is Noto Sans which is hard to read with small text. Try using the Sans Serif font if you find the text too small when adding a second line."
-msgstr "Breeze的默认字体Noto Sans在小字体下很难辨别。如果当加入第二行的时候感觉字体太小的话，可以试试用Sans Serif字体。"
+msgid ""
+"The default font for the Breeze theme is Noto Sans which is hard to read "
+"with small text. Try using the Sans Serif font if you find the text too "
+"small when adding a second line."
+msgstr ""
+"Breeze的默认字体Noto Sans在小字体下很难辨别。如果当加入第二行的时候感觉字体太"
+"小的话，可以试试用Sans Serif字体。"
 
 #: ../contents/ui/config/ConfigGeneral.qml:160
-msgid "You can also use <b>'&lt;b&gt;'ddd'&lt;/b&gt;'</b> or <b>'&lt;font color=\"#77aaadd\"&gt;'ddd'&lt;/font&gt;'</b> to style a section. Note the single quotes around the tags are used to bypass the time format."
-msgstr "你也可以使用 <b>'&lt;b&gt;'ddd'&lt;/b&gt;'</b> 或者 <b>'&lt;font color=\"#77aaadd\"&gt;'ddd'&lt;/font&gt;'</b> 自己定制时间格式。注意在标签旁的单引号是用来转义的，防止和时间格式混淆。"
+msgid ""
+"You can also use %1 or %2 to style a section. Note the single quotes around "
+"the tags are used to bypass the time format."
+msgstr ""
+"你也可以使用 %1 或者 %2 自己定制时间格式。注意在标签旁的单引号是用来转义的，"
+"防止和时间格式混淆。"
 
 #: ../contents/ui/config/ConfigGeneral.qml:166
 msgid "Font:"
@@ -423,11 +431,14 @@ msgstr " (0像素 = 自适应缩放)"
 msgid "Line 1:"
 msgstr "第一行："
 
-#: ../contents/ui/config/ConfigGeneral.qml:237 ../contents/ui/config/ConfigGeneral.qml:263 ../contents/ui/config/ConfigGeneral.qml:312
+#: ../contents/ui/config/ConfigGeneral.qml:237
+#: ../contents/ui/config/ConfigGeneral.qml:263
+#: ../contents/ui/config/ConfigGeneral.qml:312
 msgid "Preset:"
 msgstr "预设："
 
-#: ../contents/ui/config/ConfigGeneral.qml:285 ../contents/ui/config/ConfigGeneral.qml:349
+#: ../contents/ui/config/ConfigGeneral.qml:285
+#: ../contents/ui/config/ConfigGeneral.qml:349
 msgid "Bold"
 msgstr "粗体"
 
@@ -479,39 +490,49 @@ msgstr ""
 "开启Debugging\n"
 "敏感信息会被记录在 ~/.xsession-errors下"
 
-#: ../contents/ui/config/ConfigGoogleCalendar.qml:59
+#: ../contents/ui/config/ConfigGoogleCalendar.qml:60
 msgid "Login"
 msgstr "登录"
 
-#: ../contents/ui/config/ConfigGoogleCalendar.qml:68
+#: ../contents/ui/config/ConfigGoogleCalendar.qml:69
 msgid "Currently Synched."
 msgstr "当前已同步。"
 
-#: ../contents/ui/config/ConfigGoogleCalendar.qml:73
+#: ../contents/ui/config/ConfigGoogleCalendar.qml:74
 msgid "Logout"
 msgstr "注销"
 
-#: ../contents/ui/config/ConfigGoogleCalendar.qml:84
+#: ../contents/ui/config/ConfigGoogleCalendar.qml:85
 msgid "To sync with Google Calendar"
 msgstr "用以与Google日历同步"
 
-#: ../contents/ui/config/ConfigGoogleCalendar.qml:90
-msgid "Visit <a href=\"%1\">%2</a> (opens in your web browser). After you login and give permission to acess your calendar, it will give you a code to paste below."
-msgstr "访问 <a href=\"%1\">%2</a> （会在浏览器中打开）。在你登录并授权访问你的日历后，请在下方粘贴网页提供的授权码。"
+#: ../contents/ui/config/ConfigGoogleCalendar.qml:91
+msgid ""
+"Visit <a href=\"%1\">%2</a> (opens in your web browser). After you login and "
+"give permission to acess your calendar, it will give you a code to paste "
+"below."
+msgstr ""
+"访问 <a href=\"%1\">%2</a> （会在浏览器中打开）。在你登录并授权访问你的日历"
+"后，请在下方粘贴网页提供的授权码。"
 
-#: ../contents/ui/config/ConfigGoogleCalendar.qml:99
+#: ../contents/ui/config/ConfigGoogleCalendar.qml:117
+msgid "Copy Link"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGoogleCalendar.qml:138
 msgid "Enter code here (Eg: %1)"
 msgstr "请在此输入授权码 （例如： %1）"
 
-#: ../contents/ui/config/ConfigGoogleCalendar.qml:110
+#: ../contents/ui/config/ConfigGoogleCalendar.qml:149
 msgid "Invalid Google Authorization Code"
 msgstr "无效的Google授权码"
 
-#: ../contents/ui/config/ConfigGoogleCalendar.qml:122 ../contents/ui/config/ConfigICal.qml:49
+#: ../contents/ui/config/ConfigGoogleCalendar.qml:161
+#: ../contents/ui/config/ConfigICal.qml:49
 msgid "Calendars"
 msgstr "日历"
 
-#: ../contents/ui/config/ConfigGoogleCalendar.qml:127
+#: ../contents/ui/config/ConfigGoogleCalendar.qml:166
 msgid "Refresh"
 msgstr "刷新"
 
@@ -551,7 +572,8 @@ msgstr "数据"
 msgid "API App Id:"
 msgstr ""
 
-#: ../contents/ui/config/ConfigWeather.qml:53 ../contents/ui/config/ConfigWeather.qml:77
+#: ../contents/ui/config/ConfigWeather.qml:53
+#: ../contents/ui/config/ConfigWeather.qml:77
 msgid "City Id:"
 msgstr "城市Id："
 
@@ -559,7 +581,8 @@ msgstr "城市Id："
 msgid "Eg: 5983720"
 msgstr "例如：1791247"
 
-#: ../contents/ui/config/ConfigWeather.qml:61 ../contents/ui/config/ConfigWeather.qml:85
+#: ../contents/ui/config/ConfigWeather.qml:61
+#: ../contents/ui/config/ConfigWeather.qml:85
 msgid "Find City"
 msgstr "查找城市"
 
@@ -628,33 +651,73 @@ msgstr "零下温度"
 msgid "Icons"
 msgstr "图标"
 
-#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:13 ../contents/ui/config/WeatherCanadaCityDialog.qml:13
+#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:13
+#: ../contents/ui/config/WeatherCanadaCityDialog.qml:13
 msgid "Select city"
 msgstr "选择城市"
 
-#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:64 ../contents/ui/config/WeatherCanadaCityDialog.qml:68
+#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:64
+#: ../contents/ui/config/WeatherCanadaCityDialog.qml:68
 msgid "Fetched from <a href=\"%1\">%1</a>"
 msgstr "数据来源于网站 <a href=\"%1\">%1</a>"
 
-#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:70 ../contents/ui/config/WeatherCanadaCityDialog.qml:91
+#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:70
+#: ../contents/ui/config/WeatherCanadaCityDialog.qml:91
 msgid "Search"
 msgstr "查找"
 
-#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:83 ../contents/ui/config/WeatherCanadaCityDialog.qml:104
+#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:83
+#: ../contents/ui/config/WeatherCanadaCityDialog.qml:104
 msgid "Name"
 msgstr "名字"
 
-#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:88 ../contents/ui/config/WeatherCanadaCityDialog.qml:109
+#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:88
+#: ../contents/ui/config/WeatherCanadaCityDialog.qml:109
 msgid "Id"
 msgstr ""
 
-#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:93 ../contents/ui/config/WeatherCanadaCityDialog.qml:114
+#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:93
+#: ../contents/ui/config/WeatherCanadaCityDialog.qml:114
 msgid "City Webpage"
 msgstr "城市网页"
 
-#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:95 ../contents/ui/config/WeatherCanadaCityDialog.qml:116
+#: ../contents/ui/config/OpenWeatherMapCityDialog.qml:95
+#: ../contents/ui/config/WeatherCanadaCityDialog.qml:116
 msgid "Open Link"
 msgstr "打开链接"
+
+#: ../contents/ui/DateTimeSelector.qml:34
+msgctxt "event editor date format"
+msgid "d MMM, yyyy"
+msgstr ""
+
+#: ../contents/ui/DurationSelector.qml:43
+msgid "to"
+msgstr ""
+
+#: ../contents/ui/EditEventForm.qml:123 ../contents/ui/LocaleFuncs.js:42
+msgid "All Day"
+msgstr "全天"
+
+#: ../contents/ui/EditEventForm.qml:137
+msgid "Add location"
+msgstr ""
+
+#: ../contents/ui/EditEventForm.qml:153 ../contents/ui/NewEventForm.qml:36
+msgid "[No Calendars]"
+msgstr "[没有日历]"
+
+#: ../contents/ui/EditEventForm.qml:169
+msgid "Add description"
+msgstr ""
+
+#: ../contents/ui/EditEventForm.qml:197
+msgid "&Save"
+msgstr "保存"
+
+#: ../contents/ui/EditEventForm.qml:203 ../contents/ui/TimerInputView.qml:75
+msgid "&Cancel"
+msgstr "取消"
 
 #: ../contents/ui/lib/AppletVersion.qml:41
 msgid "<b>Version:</b> %1"
@@ -708,30 +771,26 @@ msgstr "设置本地化..."
 msgid "%1mm"
 msgstr ""
 
-#: ../contents/ui/MonthView.qml:363
+#: ../contents/ui/MonthView.qml:365
 msgctxt "calendar title format for current month"
 msgid "MMMM d, yyyy"
 msgstr ""
 
-#: ../contents/ui/MonthView.qml:367
+#: ../contents/ui/MonthView.qml:369
 msgctxt "calendar title format for other months of current year"
 msgid "MMMM"
 msgstr ""
 
-#: ../contents/ui/MonthView.qml:370
+#: ../contents/ui/MonthView.qml:372
 msgctxt "calendar title format for months not from current year"
 msgid "MMMM, yyyy"
 msgstr ""
 
-#: ../contents/ui/NewEventForm.qml:24
-msgid "[No Calendars]"
-msgstr "[没有日历]"
-
-#: ../contents/ui/NewEventForm.qml:31
+#: ../contents/ui/NewEventForm.qml:45
 msgid "Eg: 9am-5pm Work"
 msgstr "例如：9am-5pm 工作"
 
-#: ../contents/ui/PopupView.qml:306
+#: ../contents/ui/PopupView.qml:308
 msgid ""
 "Weather not configured.\n"
 "Go to Weather in the config and set your city,\n"
@@ -741,87 +800,85 @@ msgstr ""
 "请在天气配置中设置你的城市，\n"
 "或者选择是否显示天气预报。"
 
-#: ../contents/ui/PopupView.qml:308
+#: ../contents/ui/PopupView.qml:310
 msgid "Error fetching weather."
 msgstr ""
 
-#: ../contents/ui/PopupView.qml:577
+#: ../contents/ui/PopupView.qml:590
 msgid "Weather API limit reached, will try again soon."
 msgstr ""
 
-#: ../contents/ui/TimerInputView.qml:75
-msgid "Cancel"
-msgstr "取消"
-
 #: ../contents/ui/TimerInputView.qml:80
-msgid "Start"
-msgstr "开始"
+msgid "&Start"
+msgstr ""
 
-#: ../contents/ui/TimerView.qml:22
+#: ../contents/ui/TimerView.qml:21
 msgid "30s"
 msgstr ""
 
-#: ../contents/ui/TimerView.qml:26
+#: ../contents/ui/TimerView.qml:25
 msgid "1m"
 msgstr ""
 
-#: ../contents/ui/TimerView.qml:30
+#: ../contents/ui/TimerView.qml:29
 msgid "5m"
 msgstr ""
 
-#: ../contents/ui/TimerView.qml:34
+#: ../contents/ui/TimerView.qml:33
 msgid "10m"
 msgstr ""
 
-#: ../contents/ui/TimerView.qml:38
+#: ../contents/ui/TimerView.qml:37
 msgid "15m"
 msgstr ""
 
-#: ../contents/ui/TimerView.qml:42
+#: ../contents/ui/TimerView.qml:41
 msgid "20m"
 msgstr ""
 
-#: ../contents/ui/TimerView.qml:46
+#: ../contents/ui/TimerView.qml:45
 msgid "30m"
 msgstr ""
 
-#: ../contents/ui/TimerView.qml:50
+#: ../contents/ui/TimerView.qml:49
 msgid "45m"
 msgstr ""
 
-#: ../contents/ui/TimerView.qml:54
+#: ../contents/ui/TimerView.qml:53
 msgid "1h"
 msgstr ""
 
-#: ../contents/ui/TimerView.qml:102
+#: ../contents/ui/TimerView.qml:101
 msgid "Pause Timer"
 msgstr "暂停倒计时"
 
-#: ../contents/ui/TimerView.qml:104
+#: ../contents/ui/TimerView.qml:103
 msgid "Start Timer"
 msgstr "开始倒计时"
 
-#: ../contents/ui/TimerView.qml:108
+#: ../contents/ui/TimerView.qml:107
 msgid "Scroll to add to duration"
 msgstr "滑动滚轮调整时间"
 
-#: ../contents/ui/TimerView.qml:163 ../contents/ui/TimerView.qml:172 ../contents/ui/TimerView.qml:373
+#: ../contents/ui/TimerView.qml:162 ../contents/ui/TimerView.qml:171
+#: ../contents/ui/TimerView.qml:360
 msgid "Repeat"
 msgstr "重复"
 
-#: ../contents/ui/TimerView.qml:181 ../contents/ui/TimerView.qml:190 ../contents/ui/TimerView.qml:382
+#: ../contents/ui/TimerView.qml:180 ../contents/ui/TimerView.qml:189
+#: ../contents/ui/TimerView.qml:369
 msgid "Sound"
 msgstr "声音"
 
-#: ../contents/ui/TimerView.qml:347
+#: ../contents/ui/TimerView.qml:331
 msgid "Timer finished"
 msgstr "倒计时结束"
 
-#: ../contents/ui/TimerView.qml:348
+#: ../contents/ui/TimerView.qml:332
 msgid "%1 has passed"
 msgstr "%1过去了"
 
-#: ../contents/ui/TimerView.qml:394
+#: ../contents/ui/TimerView.qml:381
 msgid "Set Timer"
 msgstr "设置倒计时"
 
@@ -836,6 +893,15 @@ msgstr "正在进行的事件"
 #: ../contents/ui/UpcomingEvents.qml:120
 msgid "Upcoming Events"
 msgstr "即将到来的事件"
+
+#~ msgid "Discard"
+#~ msgstr "忽略"
+
+#~ msgid "Edit date/time"
+#~ msgstr "编辑日期/时间"
+
+#~ msgid "Start"
+#~ msgstr "开始"
 
 #~ msgid "Event Summary"
 #~ msgstr "添加标题"

@@ -27,40 +27,40 @@ CalendarManager {
 	//-------------------------
 	// Events
 	function fetchGoogleAccountEvents(calendarIdList) {
-		console.log('fetchGoogleAccountEvents', calendarIdList)
-		console.log('\taccessToken', accessToken)
-		if (!accessToken) return
-
-		console.log('plasmoid.configuration.access_token_expires_at', plasmoid.configuration.access_token_expires_at)
-		console.log('Date.now()', Date.now())
-
-		// for (var i = 0; i < calendarIdList.length; i++) {
-		// 	fetchGoogleCalendarEvents(calendarIdList[i])
-		// }
+		googleCalendarManager.asyncRequests += 1
+		var func = fetchGoogleAccountEvents_run.bind(this, calendarIdList, function(err, data) {
+			if (err) {
+				fetchGoogleAccountEvents_err(err)
+			} else {
+				fetchGoogleAccountEvents_done(data)
+			}
+		})
+		checkAccessToken(func)
+	}
+	function fetchGoogleAccountEvents_run(calendarIdList, callback) {
+		logger.debug('fetchGoogleAccountEvents_run', calendarIdList)
 
 		var tasks = []
 		for (var i = 0; i < calendarIdList.length; i++) {
 			var calendarId = calendarIdList[i]
 			var task = fetchGoogleCalendarEvents.bind(this, calendarId)
 			tasks.push(task)
-			break
 		}
 
-		googleCalendarManager.asyncRequests += 1
-		Async.parallel(tasks, function(err, results){
-			if (err) {
-				logger.debug('fetchGoogleAccountEvents.err', err)
-				googleCalendarManager.asyncRequestsDone += 1
-				return handleError(err.err, err.data, err.xhr)
-			}
-
-			for (var i = 0; i < results.length; i++) {
-				var calendarId = results[i].calendarId
-				var calendarData = results[i].data
-				setCalendarData(calendarId, calendarData)
-			}
-			googleCalendarManager.asyncRequestsDone += 1
-		})
+		Async.parallel(tasks, callback)
+	}
+	function fetchGoogleAccountEvents_err(err) {
+		logger.debug('fetchGoogleAccountEvents.err', err)
+		googleCalendarManager.asyncRequestsDone += 1
+		return handleError(err.err, err.data, err.xhr)
+	}
+	function fetchGoogleAccountEvents_done(results) {
+		for (var i = 0; i < results.length; i++) {
+			var calendarId = results[i].calendarId
+			var calendarData = results[i].data
+			setCalendarData(calendarId, calendarData)
+		}
+		googleCalendarManager.asyncRequestsDone += 1
 	}
 
 	function fetchGoogleCalendarEvents(calendarId, callback) {
@@ -150,7 +150,7 @@ CalendarManager {
 			if (!err && data && data.error) {
 				return pageCallback(data, null, xhr)
 			}
-			logger.debugJSON('fetchGCalEventsPage.response', args.calendarId, data)
+			// logger.debugJSON('fetchGCalEventsPage.response', args.calendarId, data)
 			pageCallback(err, data, xhr)
 		})
 	}
@@ -208,6 +208,7 @@ CalendarManager {
 	}
 
 	function checkAccessToken(callback) {
+		logger.debug('checkAccessToken')
 		if (plasmoid.configuration.access_token_expires_at < Date.now() + 5000) {
 			updateAccessToken(callback)
 		} else {
@@ -233,11 +234,16 @@ CalendarManager {
 
 				callback(null)
 			})
+		} else {
+			callback('No refresh token. Cannot update access token.')
 		}
 	}
 
 	signal accessTokenError(string msg)
 	signal newAccessToken()
+	signal transactionError(string msg)
+
+	onTransactionError: logger.log(msg)
 
 	function applyAccessToken(data) {
 		plasmoid.configuration.access_token = data.access_token
@@ -308,24 +314,42 @@ CalendarManager {
 	}
 
 
-
-	function createGoogleCalendarEvent(accessToken, calendarId, date, text) {
+	//---
+	function createGoogleCalendarEvent(calendarId, date, text) {
 		if (accessToken) {
 			var dateString = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate()
 			var eventText = dateString + ' ' + text
-			createGCalEvent({
-				access_token: accessToken,
-				calendarId: calendarId,
-				text: eventText,
-			}, function(err, data) {
-				// logger.debug(err, JSON.stringify(data, null, '\t'))
-				if (googleCalendarManager.calendarIdList.indexOf(calendarId) >= 0) {
-					parseSingleEvent(calendarId, data)
-					addEvent(calendarId, data)
-					eventCreated(calendarId, data)
+
+			var func = createGoogleCalendarEvent_run.bind(this, calendarId, eventText, function(err, data) {
+				if (err) {
+					createGoogleCalendarEvent_err(err)
+				} else {
+					createGoogleCalendarEvent_done(calendarId, data)
 				}
 			})
+			checkAccessToken(func)
+		} else {
+			transactionError('attempting to "create an event" without an access token set')
 		}
+	}
+	function createGoogleCalendarEvent_run(calendarId, eventText, callback) {
+		logger.debugJSON('createGoogleCalendarEvent_run', calendarId, eventText)
+		createGCalEvent({
+			access_token: accessToken,
+			calendarId: calendarId,
+			text: eventText,
+		}, callback)
+	}
+	function createGoogleCalendarEvent_done(calendarId, data) {
+		logger.debugJSON('createGoogleCalendarEvent_done', calendarId, data)
+		if (googleCalendarManager.calendarIdList.indexOf(calendarId) >= 0) {
+			parseSingleEvent(calendarId, data)
+			addEvent(calendarId, data)
+			eventCreated(calendarId, data)
+		}
+	}
+	function createGoogleCalendarEvent_err(err) {
+		logger.log('createGoogleCalendarEvent_err', err)
 	}
 
 	function createGCalEvent(args, callback) {
@@ -349,6 +373,8 @@ CalendarManager {
 		})
 	}
 
+
+	//---
 	function handleError(err, data, xhr) {
 		// https://developers.google.com/calendar/v3/errors
 		if (err.error && err.error.errors && err.error.errors.length >= 1) {
@@ -370,30 +396,47 @@ CalendarManager {
 		return data
 	}
 
-	function setEventProperty(accessToken, calendarId, eventId, key, value) {
-		console.log('googleCalendarManager.setEventProperty', key, value)
+	//---
+	function setEventProperty(calendarId, eventId, key, value) {
+		console.log('googleCalendarManager.setEventProperty', calendarId, eventId, key, value)
 		var args = {}
 		args[key] = value
-		updateGoogleCalendarEvent(accessToken, calendarId, eventId, args)
-		// patchGoogleCalendarEvent(accessToken, calendarId, eventId, args, function(err, data, xhr) {
-		// 	logger.debug('setEventProperty.done')
-		// })
+		updateGoogleCalendarEvent(calendarId, eventId, args)
+
+		// Note: Make sure switching between all day event (event.start.date) and a date+time
+		// event (event.start.dateTime) works properly before switching to PATCH.
+		// patchGoogleCalendarEvent(accessToken, calendarId, eventId, args, callback)
 	}
 
-	function updateGoogleCalendarEvent(accessToken, calendarId, eventId, args) {
-		var event = getEvent(calendarId, eventId)
-		if (!event) {
-			logger.log('error, trying to update event that doesn\'t exist')
-			return
+	function updateGoogleCalendarEvent(calendarId, eventId, args) {
+		if (accessToken) {
+			var event = getEvent(calendarId, eventId)
+			if (!event) {
+				transactionError('attempting to "set an event property" for an event that doesn\'t exist')
+				return
+			}
+
+			var func = updateGoogleCalendarEvent_run.bind(this, calendarId, eventId, event, args, function(err, data) {
+				if (err) {
+					updateGoogleCalendarEvent_err(err)
+				} else {
+					updateGoogleCalendarEvent_done(calendarId, eventId, event, data)
+				}
+			})
+			checkAccessToken(func)
+		} else {
+			transactionError('attempting to "set an event property" without an access token set')
 		}
-		logger.debugJSON('googleCalendarManager.updateGoogleCalendarEvent', args)
+	}
+	function updateGoogleCalendarEvent_run(calendarId, eventId, event, args, callback) {
+		logger.debugJSON('updateGoogleCalendarEvent_run', calendarId, eventId, event, args)
 		
 		// Merge assigned values into a cloned object
 		var data = cloneRawEvent(event)
 		var keys = Object.keys(args)
 		for (var i = 0; i < keys.length; i++) {
 			var key = keys[i]
-			data[key] = args[keys]
+			data[key] = args[key]
 		}
 		logger.debugJSON('updateGoogleCalendarEvent', 'sent', data)
 		
@@ -402,20 +445,23 @@ CalendarManager {
 			calendarId: calendarId,
 			eventId: eventId,
 			data: data,
-		}, function(err, data, xhr) {
-			logger.debugJSON('updateGoogleCalendarEvent.response', data)
+		}, callback)
+	}
+	function updateGoogleCalendarEvent_done(calendarId, eventId, event, data) {
+		logger.debugJSON('updateGoogleCalendarEvent_done', calendarId, data)
 
-			// Merge serialized values
-			for (var i = 0; i < keys.length; i++) {
-				var key = keys[i]
-				if (typeof data[key] !== "undefined") {
-					event[key] = data[key]
-				}
-			}
-			
-			parseSingleEvent(calendarId, event)
-			eventUpdated(calendarId, eventId, event)
-		})
+		// Merge serialized values
+		var keys = Object.keys(data)
+		for (var i = 0; i < keys.length; i++) {
+			var key = keys[i]
+			event[key] = data[key]
+		}
+
+		parseSingleEvent(calendarId, event)
+		eventUpdated(calendarId, eventId, event)
+	}
+	function updateGoogleCalendarEvent_err(err) {
+		logger.log('updateGoogleCalendarEvent_err', err)
 	}
 
 	function updateGCalEvent(args, callback) {
@@ -490,25 +536,48 @@ CalendarManager {
 		// })
 	}
 
+	//---
 	function deleteEvent(calendarId, eventId) {
-		if (plasmoid.configuration.access_token) {
-			deleteGCalEvent({
-				accessToken: plasmoid.configuration.access_token,
-				calendarId: calendarId,
-				eventId: eventId,
-			}, function(err, data, xhr) {
-				// Note: No data is returned on success
-				// logger.debugJSON('deleteEvent.response', err, data, xhr.status)
-				var event = getEvent(calendarId, eventId)
-				logger.debugJSON('deleteEvent.success', calendarId, eventId, event)
-				if (event) {
-					removeEvent(calendarId, eventId)
-					eventDeleted(calendarId, eventId, event)
+		if (accessToken) {
+			var event = getEvent(calendarId, eventId)
+			if (!event) {
+				transactionError('attempting to "delete an event" for an event that doesn\'t exist')
+				return
+			}
+
+			var func = deleteEvent_run.bind(this, calendarId, eventId, function(err, data) {
+				if (err) {
+					deleteEvent_err(err)
+				} else {
+					deleteEvent_done(calendarId, eventId, data)
 				}
 			})
+			checkAccessToken(func)
 		} else {
-			logger.log('attempting to delete an event without an access token set')
+			transactionError('attempting to "delete an event" without an access token set')
 		}
+	}
+	function deleteEvent_run(calendarId, eventId, callback) {
+		logger.debugJSON('deleteEvent_run', calendarId, eventId)
+
+		deleteGCalEvent({
+			accessToken: accessToken,
+			calendarId: calendarId,
+			eventId: eventId,
+		}, callback)
+	}
+	function deleteEvent_done(calendarId, eventId, data) {
+		logger.debugJSON('deleteEvent_done', calendarId, eventId, data)
+
+		// Note: No data is returned on success
+		var event = getEvent(calendarId, eventId)
+		if (event) {
+			removeEvent(calendarId, eventId)
+			eventDeleted(calendarId, eventId, event)
+		}
+	}
+	function deleteEvent_err(err) {
+		logger.log('deleteEvent_err', err)
 	}
 
 	function deleteGCalEvent(args, callback) {

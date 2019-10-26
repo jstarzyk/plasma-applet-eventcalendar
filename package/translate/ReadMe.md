@@ -1,6 +1,6 @@
-> Version 4 of Zren's i18n scripts.
+> Version 5 of Zren's i18n scripts.
 
-With KDE Frameworks v5.37 and above, translations are bundled with the *.plasmoid file downloaded from the store.
+With KDE Frameworks v5.37 and above, translations are bundled with the `*.plasmoid` file downloaded from the store.
 
 ## Install Translations
 
@@ -16,10 +16,9 @@ Or if you know how to make a pull request
 
 ## Scripts
 
-* `./merge` will parse the `i18n()` calls in the `*.qml` files and write it to the `template.pot` file. Then it will merge any changes into the `*.po` language files.
-* `./build` will convert the `*.po` files to it's binary `*.mo` version and move it to `contents/locale/...` which will bundle the translations in the *.plasmoid without needing the user to manually install them.
-* `./install` will convert the `*.po` files to it's binary `*.mo` version and move it to `~/.local/share/locale/...`.
-* `./plasmoidlocaletest` will run `./build` then `plasmoidviewer` (part of `plasma-sdk`).
+* `sh ./merge` will parse the `i18n()` calls in the `*.qml` files and write it to the `template.pot` file. Then it will merge any changes into the `*.po` language files.
+* `sh ./build` will convert the `*.po` files to it's binary `*.mo` version and move it to `contents/locale/...` which will bundle the translations in the `*.plasmoid` without needing the user to manually install them.
+* `sh ./plasmoidlocaletest` will run `./build` then `plasmoidviewer` (part of `plasma-sdk`).
 
 ## Links
 
@@ -34,16 +33,16 @@ Or if you know how to make a pull request
 ## Status
 |  Locale  |  Lines  | % Done|
 |----------|---------|-------|
-| Template |     196 |       |
-| da       | 191/196 |   97% |
-| de       | 139/196 |   70% |
-| el       | 173/196 |   88% |
-| es       | 142/196 |   72% |
-| fr       | 173/196 |   88% |
-| nl_NL    | 196/196 |   100% |
-| pl       | 158/196 |   80% |
-| pt_BR    | 191/196 |   97% |
-| ru       | 179/196 |   91% |
-| tr       | 194/196 |   98% |
-| uk       | 158/196 |   80% |
-| zh_CN    | 166/196 |   84% |
+| Template |     199 |       |
+| da       | 189/199 |   94% |
+| de       | 138/199 |   69% |
+| el       | 171/199 |   85% |
+| es       | 199/199 |  100% |
+| fr       | 170/199 |   85% |
+| nl_NL    | 199/199 |  100% |
+| pl       | 155/199 |   77% |
+| pt_BR    | 188/199 |   94% |
+| ru       | 176/199 |   88% |
+| tr       | 191/199 |   95% |
+| uk       | 157/199 |   78% |
+| zh_CN    | 163/199 |   81% |
